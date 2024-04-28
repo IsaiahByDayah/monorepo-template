@@ -1,4 +1,4 @@
-const vercelPrettier = require("@vercel/style-guide/prettier");
+const vercelPrettier = require("@vercel/style-guide/prettier")
 
 module.exports = {
   ...vercelPrettier,
@@ -18,4 +18,4 @@ module.exports = {
   ],
   tailwindConfig: "./packages/tailwind-config/tailwind.config.ts",
   tailwindFunctions: ["clsx"],
-};
+}
