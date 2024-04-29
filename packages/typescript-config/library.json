@@ -4,8 +4,10 @@
   "extends": "./base.json",
   "compilerOptions": {
     "composite": true,
+    "incremental": true,
     "outDir": "dist",
     "sourceMap": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
     "types": ["node"]
   }
 }
