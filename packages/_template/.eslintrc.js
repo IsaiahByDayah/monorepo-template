@@ -1,5 +1,5 @@
 /** @type {import("eslint").Linter.Config} */
-module.exports = {
+const config = {
   root: true,
   extends: ["@repo/eslint-config/library.js"],
   parser: "@typescript-eslint/parser",
@@ -7,3 +7,5 @@ module.exports = {
     project: true,
   },
 }
+
+export default config

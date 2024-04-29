@@ -1,5 +1,5 @@
 /** @type {import("eslint").Linter.Config} */
-module.exports = {
+const config = {
   root: true,
   extends: ["@repo/eslint-config/react-internal.js"],
   parser: "@typescript-eslint/parser",
@@ -8,3 +8,5 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
 }
+
+export default config

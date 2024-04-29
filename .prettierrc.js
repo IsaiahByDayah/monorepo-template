@@ -1,6 +1,7 @@
-const vercelPrettier = require("@vercel/style-guide/prettier")
+import vercelPrettier from "@vercel/style-guide/prettier"
 
-module.exports = {
+/** @type {import("prettier").Config} */
+const config = {
   ...vercelPrettier,
   semi: false,
   singleQuote: false,
@@ -19,3 +20,5 @@ module.exports = {
   tailwindConfig: "./packages/tailwind-config/tailwind.config.ts",
   tailwindFunctions: ["clsx"],
 }
+
+export default config

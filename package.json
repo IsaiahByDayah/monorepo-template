@@ -1,6 +1,7 @@
 {
   "name": "monorepo-template",
   "private": true,
+  "type": "module",
   "scripts": {
     "clean": "turbo clean && rm -rf .turbo && rm -rf node_modules",
     "build": "turbo build",
