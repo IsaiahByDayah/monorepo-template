@@ -6,15 +6,15 @@
     "allowJs": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
     "incremental": true,
+    "isolatedModules": true,
+    "module": "NodeNext",
     "moduleDetection": "force",
     "noImplicitOverride": true,
     "noUncheckedIndexedAccess": true,
-    "moduleResolution": "NodeNext",
+    "preserveWatchOutput": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": true,
-    "preserveWatchOutput": true
+    "strict": true
   }
 }

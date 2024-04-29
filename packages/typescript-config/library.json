@@ -6,13 +6,9 @@
     "composite": true,
     "declaration": true,
     "declarationMap": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
     "outDir": "dist",
     "sourceMap": true,
     "target": "ES2022",
     "verbatimModuleSyntax": true
-  },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  }
 }
