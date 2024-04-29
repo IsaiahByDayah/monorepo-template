@@ -1,22 +1,33 @@
-import { resolve } from "node:path"
+const { resolve } = require("node:path")
 
 const project = resolve(process.cwd(), "tsconfig.json")
 
 /** @type {import("eslint").Linter.Config} */
-const config = {
-  extends: ["eslint:recommended", "prettier", "eslint-config-turbo"],
-  plugins: ["only-warn"],
+module.exports = {
+  extends: [
+    require.resolve("@vercel/style-guide/eslint/node"),
+    require.resolve("@vercel/style-guide/eslint/browser"),
+    require.resolve("@vercel/style-guide/eslint/typescript"),
+    "turbo",
+    "prettier",
+  ],
+  parserOptions: {
+    project,
+  },
   globals: {
-    React: true,
     JSX: true,
   },
   env: {
     node: true,
+    browser: true,
   },
   settings: {
     "import/resolver": {
       typescript: {
         project,
+      },
+      node: {
+        extensions: [".mjs", ".js", ".jsx", ".ts", ".tsx"],
       },
     },
   },
@@ -25,12 +36,8 @@ const config = {
     ".*.js",
     "node_modules/",
     "dist/",
+    "**/*.css",
   ],
-  overrides: [
-    {
-      files: ["*.js?(x)", "*.ts?(x)"],
-    },
-  ],
+  // add rules configurations here
+  rules: {},
 }
-
-export default config

@@ -1,4 +1,4 @@
-import { resolve } from "node:path"
+const { resolve } = require("node:path")
 
 const project = resolve(process.cwd(), "tsconfig.json")
 
@@ -9,9 +9,17 @@ const project = resolve(process.cwd(), "tsconfig.json")
  */
 
 /** @type {import("eslint").Linter.Config} */
-const config = {
-  extends: ["eslint:recommended", "prettier", "eslint-config-turbo"],
-  plugins: ["only-warn"],
+module.exports = {
+  extends: [
+    require.resolve("@vercel/style-guide/eslint/browser"),
+    require.resolve("@vercel/style-guide/eslint/typescript"),
+    require.resolve("@vercel/style-guide/eslint/react"),
+    "prettier",
+    "turbo",
+  ],
+  parserOptions: {
+    project,
+  },
   globals: {
     React: true,
     JSX: true,
@@ -31,11 +39,6 @@ const config = {
     ".*.js",
     "node_modules/",
     "dist/",
-  ],
-  overrides: [
-    // Force ESLint to detect .tsx files
-    { files: ["*.js?(x)", "*.ts?(x)"] },
+    "**/*.css",
   ],
 }
-
-export default config
