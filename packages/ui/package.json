@@ -16,6 +16,9 @@
     "lint": "eslint src/ && tsc --noEmit --incremental",
     "generate:component": "turbo gen react-component"
   },
+  "peerDependencies": {
+    "react": "^18.3.1"
+  },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-config": "workspace:^",
