@@ -4,10 +4,15 @@
   "extends": "./base.json",
   "compilerOptions": {
     "composite": true,
-    "incremental": true,
+    "declaration": true,
+    "declarationMap": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "outDir": "dist",
     "sourceMap": true,
-    "tsBuildInfoFile": ".tsbuildinfo",
-    "types": ["node"]
-  }
+    "target": "ES2022",
+    "verbatimModuleSyntax": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
