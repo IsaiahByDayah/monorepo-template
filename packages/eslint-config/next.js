@@ -1,6 +1,7 @@
 const { resolve } = require("node:path")
 
 const sharedRules = require("./sharedRules")
+const sharedReactRules = require("./sharedReactRules")
 
 const project = resolve(process.cwd(), "tsconfig.json")
 
@@ -42,5 +43,6 @@ module.exports = {
   // add rules configurations here
   rules: {
     ...sharedRules.rules,
+    ...sharedReactRules.rules,
   },
 }

@@ -21,12 +21,5 @@ module.exports = {
       },
     ],
     "@typescript-eslint/unbound-method": "off",
-    "react/function-component-definition": [
-      2,
-      {
-        namedComponents: "arrow-function",
-      },
-    ],
-    "react/jsx-sort-props": "off",
   },
 }
