@@ -1,5 +1,7 @@
 const { resolve } = require("node:path")
 
+const sharedRules = require("./sharedRules")
+
 const project = resolve(process.cwd(), "tsconfig.json")
 
 /*
@@ -41,4 +43,7 @@ module.exports = {
     "dist/",
     "**/*.css",
   ],
+  rules: {
+    ...sharedRules.rules,
+  },
 }

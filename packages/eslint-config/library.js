@@ -1,5 +1,7 @@
 const { resolve } = require("node:path")
 
+const sharedRules = require("./sharedRules")
+
 const project = resolve(process.cwd(), "tsconfig.json")
 
 /** @type {import("eslint").Linter.Config} */
@@ -39,5 +41,7 @@ module.exports = {
     "**/*.css",
   ],
   // add rules configurations here
-  rules: {},
+  rules: {
+    ...sharedRules.rules,
+  },
 }
