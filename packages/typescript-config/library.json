@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Library Package",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "types": ["node"]
+  }
+}
