@@ -2,10 +2,11 @@
   "name": "monorepo-template",
   "private": true,
   "scripts": {
+    "clean": "turbo clean && rm -rf .turbo && rm -rf node_modules",
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "clean": "turbo clean && rm -rf .turbo && rm -rf node_modules",
+    "test": "turbo test",
     "format": "prettier --check \"**/*.{js,jsx,ts,tsx,md}\"",
     "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,md}\""
   },
