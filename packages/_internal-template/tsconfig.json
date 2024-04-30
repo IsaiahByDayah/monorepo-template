@@ -1,5 +1,0 @@
-{
-  "extends": "@repo/typescript-config/internal-library.json",
-  "include": ["."],
-  "exclude": ["node_modules", "build", "dist"]
-}

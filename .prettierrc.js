@@ -1,6 +1,5 @@
 const vercelPrettier = require("@vercel/style-guide/prettier")
 
-/** @type {import("prettier").Config} */
 module.exports = {
   ...vercelPrettier,
   semi: false,

@@ -1,24 +1,12 @@
-"use client"
-
 import { clsx } from "clsx"
-import { type ReactNode } from "react"
+import { type ButtonHTMLAttributes } from "react"
 
-interface ButtonProps {
-  children: ReactNode
-  className?: string
-  appName: string
-}
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
 
-export const Button = ({ children, className, appName }: ButtonProps) => {
-  return (
-    <button
-      className={clsx("ui-text-blue-500", className)}
-      onClick={() => {
-        console.info(`Hello from your ${appName} app!`)
-      }}
-      type="button"
-    >
-      {children}
-    </button>
-  )
-}
+export const Button = ({ className, ...rest }: ButtonProps) => (
+  <button
+    className={clsx("ui-rounded ui-border ui-px-5 ui-py-4", className)}
+    type="button"
+    {...rest}
+  />
+)

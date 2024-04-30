@@ -1,0 +1,46 @@
+{
+  "name": "@repo/trpc",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    "./client": "./dist/client/index.js",
+    "./server": "./dist/server/index.js",
+    "./constants": "./dist/constants.js"
+  },
+  "typesVersions": {
+    "*": {
+      "client": [
+        "dist/client"
+      ],
+      "server": [
+        "dist/server"
+      ],
+      "constants": [
+        "dist/constants"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "lint": "eslint src/ && tsc --noEmit --incremental"
+  },
+  "dependencies": {
+    "@repo/b2-storage": "workspace:*",
+    "@repo/stripe": "workspace:*",
+    "@repo/turso": "workspace:*",
+    "@repo/utils": "workspace:*",
+    "@sentry/node": "^7.102.0",
+    "@trpc/client": "^10.45.1",
+    "@trpc/server": "^10.45.1",
+    "superjson": "^2.2.0",
+    "trpc-openapi": "^1.2.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
+    "eslint-config-custom": "workspace:*",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  }
+}

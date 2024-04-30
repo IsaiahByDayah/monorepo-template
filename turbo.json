@@ -1,23 +1,28 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
+  "globalDotEnv": [".env.local"],
+  "globalEnv": [
+    "DATABASE_AUTH_TOKEN",
+    "DATABASE_URL",
+    "NODE_ENV",
+    "SENTRY_DSN"
+  ],
   "pipeline": {
-    "clean": {
-      "cache": false
-    },
     "build": {
+      "dotEnv": [
+        ".env.production.local",
+        ".env.local",
+        ".env.production",
+        ".env"
+      ],
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
-    "dev": {
-      "dependsOn": ["^build"],
-      "cache": false,
-      "persistent": true
-    },
-    "lint": {
-      "dependsOn": ["^lint", "^build"]
+    "deploy": {
+      "dependsOn": ["build", "test", "lint"]
     },
     "test": {
+      "dotEnv": [".env.test.local", ".env.test", ".env"],
       "dependsOn": ["^build"],
       "inputs": [
         "src/**/*.tsx",
@@ -25,6 +30,53 @@
         "src/**/*.test.ts",
         "src/**/*.test.tsx"
       ]
+    },
+    "lint": {
+      "dependsOn": ["^build"]
+    },
+    "dev": {
+      "dotEnv": [
+        ".env.development.local",
+        ".env.local",
+        ".env.development",
+        ".env"
+      ],
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
+    },
+    "start": {
+      "dotEnv": [
+        ".env.development.local",
+        ".env.local",
+        ".env.development",
+        ".env"
+      ],
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
+    },
+    "clean": {
+      "cache": false
+    },
+    "db:check": {
+      "cache": false
+    },
+    "db:push": {
+      "cache": false
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:generate:custom": {
+      "cache": false
+    },
+    "db:migrate": {
+      "cache": false
+    },
+    "db:seed": {
+      "dependsOn": ["^build"],
+      "cache": false
     }
   }
 }

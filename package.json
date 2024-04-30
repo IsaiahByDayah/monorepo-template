@@ -1,24 +1,31 @@
 {
-  "name": "monorepo-template",
   "private": true,
   "scripts": {
+    "build": "pnpm with-env turbo run build",
+    "start": "pnpm with-env turbo run start",
     "clean": "turbo clean && rm -rf .turbo && rm -rf node_modules",
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "test": "turbo test",
+    "dev": "pnpm with-env turbo run dev --concurrency 20",
     "format": "prettier --check \"**/*.{js,jsx,ts,tsx,md}\"",
-    "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,md}\""
+    "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,md}\"",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "with-env": "dotenv -c --",
+    "db:check": "pnpm with-env turbo run db:check",
+    "db:push": "pnpm with-env turbo run db:push",
+    "db:generate": "pnpm with-env turbo run db:generate",
+    "db:generate:custom": "pnpm with-env turbo run db:generate:custom",
+    "db:migrate": "pnpm with-env turbo run db:migrate",
+    "db:seed": "pnpm with-env turbo run db:seed"
   },
   "devDependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
-    "@repo/typescript-config": "workspace:*",
-    "@vercel/style-guide": "^5.2.0",
-    "dotenv-cli": "^7.4.1",
-    "eslint": "^8.57.0",
-    "prettier": "^3.2.5",
-    "prettier-plugin-tailwindcss": "^0.5.14",
-    "turbo": "latest"
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
+    "@repo/tsconfig": "workspace:*",
+    "@vercel/style-guide": "^5.0.0",
+    "dotenv-cli": "^7.3.0",
+    "eslint": "^8.52.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.3",
+    "turbo": "^1.10.16"
   },
-  "packageManager": "pnpm@8.9.0"
+  "packageManager": "pnpm@8.9.2"
 }

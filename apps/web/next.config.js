@@ -1,6 +1,5 @@
-/** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
+  transpilePackages: ["@repo/ui"],
   output: "standalone",
-  transpilePackages: ["@repo/ui", "@repo/internal-template"],
-}
+};

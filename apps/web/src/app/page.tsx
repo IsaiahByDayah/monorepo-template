@@ -1,18 +1,9 @@
-import { goodbye } from "@repo/external-template"
-import { hello } from "@repo/internal-template"
-import { getName } from "@repo/internal-template/name"
-import { Button } from "@repo/ui"
+import { HelloWorld } from "./HelloWorld"
 
 const Page = () => {
-  console.info(hello())
-  console.info(hello(getName()))
-  console.info(goodbye())
-
   return (
-    <main>
-      <Button className="text-2xl text-purple-700" appName="test">
-        Hello, World!
-      </Button>
+    <main className="flex min-h-screen flex-col items-center justify-center gap-10 p-24">
+      <HelloWorld />
     </main>
   )
 }

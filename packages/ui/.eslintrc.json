@@ -1,3 +1,3 @@
 {
-  "extends": ["@repo/eslint-config/react-internal.js"]
+  "extends": ["custom/react"]
 }

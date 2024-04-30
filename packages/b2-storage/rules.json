@@ -1,0 +1,9 @@
+[
+  {
+    "corsRuleName": "AllowAll",
+    "allowedOrigins": ["*"],
+    "allowedHeaders": ["*"],
+    "allowedOperations": ["s3_put"],
+    "maxAgeSeconds": 3600
+  }
+]

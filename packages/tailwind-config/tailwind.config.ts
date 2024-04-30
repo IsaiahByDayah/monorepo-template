@@ -1,6 +1,9 @@
 import type { Config } from "tailwindcss"
 
-// We want each package to be responsible for its own content.
+export const DEFAULT_CONTENT: Config["content"] = [
+  "./src/**/*.{js,ts,jsx,tsx,mdx}",
+]
+
 const config: Omit<Config, "content"> = {
   theme: {
     extend: {
@@ -12,4 +15,5 @@ const config: Omit<Config, "content"> = {
   },
   plugins: [],
 }
+
 export default config

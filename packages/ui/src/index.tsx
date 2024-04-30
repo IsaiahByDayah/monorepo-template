@@ -1,1 +1,2 @@
-export * from "./Button.js"
+// components
+export * from "./Button"

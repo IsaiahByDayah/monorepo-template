@@ -1,0 +1,39 @@
+{
+  "name": "@repo/turso",
+  "version": "0.0.0",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "lint": "eslint src/ scripts/ seeds/ && tsc --noEmit --incremental",
+    "dev": "pnpm db:studio",
+    "db:studio": "drizzle-kit studio --port $DRIZZLE_STUDIO_PORT",
+    "db:check": "drizzle-kit check:sqlite",
+    "db:push": "drizzle-kit push:sqlite",
+    "db:generate": "drizzle-kit generate:sqlite",
+    "db:generate:custom": "drizzle-kit generate:sqlite --custom",
+    "db:migrate": "node --import tsx ./scripts/migrate.ts",
+    "db:seed": "node --import tsx ./scripts/seed.ts"
+  },
+  "dependencies": {
+    "@libsql/client": "0.4.3",
+    "@repo/utils": "workspace:*",
+    "drizzle-orm": "^0.30.8",
+    "drizzle-zod": "^0.5.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
+    "drizzle-kit": "^0.20.17",
+    "eslint-config-custom": "workspace:*",
+    "eslint-plugin-drizzle": "^0.2.3",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  }
+}
