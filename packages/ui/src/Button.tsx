@@ -1,7 +1,7 @@
 "use client"
 
-import clsx from "clsx"
-import { ReactNode } from "react"
+import { clsx } from "clsx"
+import { type ReactNode } from "react"
 
 interface ButtonProps {
   children: ReactNode
@@ -13,7 +13,10 @@ export const Button = ({ children, className, appName }: ButtonProps) => {
   return (
     <button
       className={clsx("ui-text-blue-500", className)}
-      onClick={() => alert(`Hello from your ${appName} app!`)}
+      onClick={() => {
+        console.info(`Hello from your ${appName} app!`)
+      }}
+      type="button"
     >
       {children}
     </button>
