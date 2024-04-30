@@ -8,14 +8,15 @@ const project = resolve(process.cwd(), "tsconfig.json")
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: [
-    require.resolve("@vercel/style-guide/eslint/node"),
-    require.resolve("@vercel/style-guide/eslint/browser"),
-    require.resolve("@vercel/style-guide/eslint/typescript"),
-    require.resolve("@vercel/style-guide/eslint/react"),
-    require.resolve("@vercel/style-guide/eslint/next"),
-    "turbo",
-    "prettier",
-  ],
+    "@vercel/style-guide/eslint/node",
+    "@vercel/style-guide/eslint/browser",
+    "@vercel/style-guide/eslint/typescript",
+    "@vercel/style-guide/eslint/react",
+    "@vercel/style-guide/eslint/next",
+    "eslint-config-turbo",
+    "eslint-config-prettier",
+  ].map(require.resolve),
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     project,
   },

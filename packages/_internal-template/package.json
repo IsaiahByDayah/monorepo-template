@@ -1,17 +1,14 @@
 {
-  "name": "@repo/template",
+  "name": "@repo/internal-template",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist/**"
-  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./name": "./src/name.ts"
+  },
   "scripts": {
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "build": "tsup",
-    "dev": "tsup --watch",
     "lint": "eslint src/ && tsc --noEmit --incremental",
     "test": "node --import tsx --test **/*.test.ts"
   },
@@ -20,7 +17,6 @@
     "@repo/typescript-config": "workspace:*",
     "@types/eslint": "^8.56.10",
     "@types/node": "^20.12.7",
-    "tsup": "^8.0.2",
     "tsx": "^4.7.3",
     "typescript": "^5.4.5"
   }

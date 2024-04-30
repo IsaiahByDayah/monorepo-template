@@ -1,6 +1,13 @@
+import { goodbye } from "@repo/external-template"
+import { hello } from "@repo/internal-template"
+import { getName } from "@repo/internal-template/name"
 import { Button } from "@repo/ui"
 
-export default function Page(): JSX.Element {
+const Page = () => {
+  console.info(hello())
+  console.info(hello(getName()))
+  console.info(goodbye())
+
   return (
     <main>
       <Button className="text-2xl text-purple-700" appName="test">
@@ -9,3 +16,5 @@ export default function Page(): JSX.Element {
     </main>
   )
 }
+
+export default Page

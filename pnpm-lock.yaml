@@ -57,6 +57,12 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
+      '@repo/external-template':
+        specifier: workspace:*
+        version: link:../../packages/_external-template
+      '@repo/internal-template':
+        specifier: workspace:*
+        version: link:../../packages/_internal-template
       '@repo/tailwind-config':
         specifier: workspace:*
         version: link:../../packages/tailwind-config
@@ -88,7 +94,7 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
 
-  packages/_template:
+  packages/_external-template:
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -105,6 +111,27 @@ importers:
       tsup:
         specifier: ^8.0.2
         version: 8.0.2(typescript@5.4.5)
+      tsx:
+        specifier: ^4.7.3
+        version: 4.7.3
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
+  packages/_internal-template:
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/eslint':
+        specifier: ^8.56.10
+        version: 8.56.10
+      '@types/node':
+        specifier: ^20.12.7
+        version: 20.12.7
       tsx:
         specifier: ^4.7.3
         version: 4.7.3

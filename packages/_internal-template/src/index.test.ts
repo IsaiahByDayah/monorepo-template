@@ -3,7 +3,7 @@ import test, { describe } from "node:test"
 
 import { hello } from "./index.js"
 
-void describe("Template", () => {
+void describe("Internal Template", () => {
   void test("hello", () => {
     const msg = hello()
     assert(typeof msg === "string")

@@ -21,6 +21,8 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@repo/internal-template": "workspace:*",
+    "@repo/external-template": "workspace:*",
     "@types/eslint": "^8.56.10",
     "@types/node": "^20.12.7",
     "@types/react": "^18.3.1",
