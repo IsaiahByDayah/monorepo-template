@@ -9,6 +9,7 @@
     "outDir": "dist",
     "sourceMap": true,
     "target": "ES2022",
+    "tsBuildInfoFile": "tsconfig.tsbuildinfo",
     "verbatimModuleSyntax": true
   }
 }
