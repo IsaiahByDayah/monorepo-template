@@ -2,5 +2,5 @@
 module.exports = {
   reactStrictMode: true,
   output: "standalone",
-  transpilePackages: ["@repo/ui"],
+  transpilePackages: ["@repo/ui", "@repo/internal-template"],
 }
