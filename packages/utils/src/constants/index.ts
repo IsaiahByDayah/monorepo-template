@@ -1,2 +1,4 @@
-export * as api from "./api"
-export * as photos from "./photos"
+export const SomeEnum = {
+  ITEM_A: 1,
+  ITEM_B: 2,
+} as const

@@ -1,10 +1,10 @@
 import { type OpenApiRouter } from "trpc-openapi"
 
 import { router } from "../trpc"
-import { v1Router } from "./v1"
+import { testRouter } from "./test"
 
 export const appRouter = router({
-  v1: v1Router,
+  test: testRouter,
 })
 
 export const openApiRouter = appRouter as OpenApiRouter

@@ -11,7 +11,7 @@
     "build": "tsup",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "lint": "eslint src/ scripts/ seeds/ && tsc --noEmit --incremental",
-    "dev": "pnpm db:studio",
+    "_dev": "pnpm db:studio",
     "db:studio": "drizzle-kit studio --port $DRIZZLE_STUDIO_PORT",
     "db:check": "drizzle-kit check:sqlite",
     "db:push": "drizzle-kit push:sqlite",

@@ -7,14 +7,14 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "exports": {
-    "./styles.css": "./dist/index.css",
+    "./styles.css": "./out/styles.css",
     ".": "./dist"
   },
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "build": "tsup & tailwindcss -i ./src/styles.css -o dist/index.css",
-    "dev": "tsup --watch & tailwindcss -i ./src/styles.css -o dist/index.css --watch",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf out",
+    "build": "tsup & tailwindcss -i ./src/styles.css -o out/styles.css",
+    "dev": "tsup --watch & tailwindcss -i ./src/styles.css -o out/styles.css --watch",
     "lint": "eslint src/ && tsc --noEmit --incremental"
   },
   "peerDependencies": {
