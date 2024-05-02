@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.19",
+    "@repo/stripe": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
     "@repo/utils": "workspace:*",

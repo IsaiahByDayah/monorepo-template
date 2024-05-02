@@ -11,7 +11,7 @@
     "build": "tsup",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "lint": "eslint src/ && tsc --noEmit --incremental",
-    "dev": "if command -v stripe > /dev/null 2>&1; then stripe listen --forward-to localhost:3001/stripe/webhook; else echo \"stripe cli missing. see https://stripe.com/docs/stripe-cli for instructions on how to install and login.\"; fi"
+    "dev": "if command -v stripe > /dev/null 2>&1; then stripe listen --forward-to localhost:3000/api/stripe/webhook; else echo \"stripe cli missing. see https://stripe.com/docs/stripe-cli for instructions on how to install and login.\"; fi"
   },
   "devDependencies": {
     "@repo/tsconfig": "workspace:*",
