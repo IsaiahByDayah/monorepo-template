@@ -1,0 +1,25 @@
+{
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  },
+  "hosting": [
+    {
+      "site": "web",
+      "rewrites": [
+        {
+          "source": "**",
+          "run": {
+            "serviceId": "{{REPO NAME}}--web",
+            "region": "us-west1"
+          }
+        }
+      ]
+    }
+  ]
+}

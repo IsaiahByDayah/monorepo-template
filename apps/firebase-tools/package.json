@@ -1,0 +1,16 @@
+{
+  "name": "@repo/firebase-tools",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.mjs",
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules",
+    "cli": "firebase",
+    "dev": "firebase emulators:start --import=./exports/default --export-on-exit=./exports/default",
+    "export": "firebase emulators:export ./exports/default",
+    "deploy": "firebase deploy --only hosting"
+  },
+  "devDependencies": {
+    "firebase-tools": "^12.7.0"
+  }
+}
