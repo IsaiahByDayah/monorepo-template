@@ -14,15 +14,13 @@ interface UploadRequest {
    */
   ttl?: number
 }
-export const getUploadUrl = ({
+export const createUploadUrl = ({
   storageKey,
   contentLength,
   ttl,
 }: UploadRequest) => {
   if (!process.env.B2_BUCKET) {
-    throw new Error(
-      "Could not create presignedUrl client. B2_BUCKET env missing.",
-    )
+    throw new Error("Could not create presigned Url. B2_BUCKET env missing.")
   }
 
   const input: PutObjectCommandInput = {
@@ -30,8 +28,6 @@ export const getUploadUrl = ({
     Key: storageKey,
     ContentLength: contentLength,
   }
-
-  console.info("Generating presigned upload url for:", input)
 
   const client = getClient()
   const command = new PutObjectCommand(input)

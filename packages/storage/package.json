@@ -1,5 +1,5 @@
 {
-  "name": "@repo/b2-storage",
+  "name": "@repo/storage",
   "version": "0.0.0",
   "types": "./dist/index.d.ts",
   "type": "module",
