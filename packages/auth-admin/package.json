@@ -1,0 +1,24 @@
+{
+  "name": "@repo/auth-admin",
+  "version": "0.0.0",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "lint": "eslint src/ && tsc --noEmit  --incremental"
+  },
+  "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
+    "eslint-config-custom": "workspace:*",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "firebase-admin": "^11.11.0"
+  }
+}
