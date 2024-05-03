@@ -7,14 +7,12 @@ export * as schemas from "./schemas"
 const nanoid = customAlphabet("6789BCDFGHJKLMNPQRTWbcdfghjkmnpqrtwz", 22)
 
 export const IdTypes = {
-  TYPE_A: "typeA",
-  TYPE_B: "typeB",
+  USER: "user",
 } as const
 export type IIdType = (typeof IdTypes)[keyof typeof IdTypes]
 
 export const IdPrefixes = {
-  [IdTypes.TYPE_A]: "a",
-  [IdTypes.TYPE_B]: "b",
+  [IdTypes.USER]: "usr",
 } as const
 export type IIdPrefix = (typeof IdPrefixes)[IIdType]
 
